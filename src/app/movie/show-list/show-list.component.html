@@ -1,0 +1,36 @@
+
+<br><br><br><br>
+<h2 style="color: rgb(128, 128, 128);">{{title}}</h2>
+ <hr>
+<table class="table table-sm table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Language</th>
+        <th scope="col">Genre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <tr *ngFor="let movie of movieModel">
+
+        <td>{{movie.MovieName}}</td>
+
+        <td>{{movie.MovieTitle}}</td>
+
+        <td>{{movie.MovieDescription}}</td>
+
+        <td>{{movie.MovieRating}}</td>
+
+        <td>{{movie.MovieLanguage}}</td>
+
+        <td>{{movie.MovieGenre}}</td>
+
+         
+
+      </tr>
+    </tbody>
+  </table>

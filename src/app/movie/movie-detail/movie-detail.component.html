@@ -1,0 +1,27 @@
+<br><br><br>
+<div class="container">
+    <h2 style="color:white ;">{{movieModel.MovieName}}</h2>
+    <hr style="color: gray;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10">
+                <p style="color: rgb(255, 255, 255);">{{movieModel.MovieTitle}}</p>
+                <p style="color: white;">{{movieModel.MovieDescription}}</p>
+                <p style="color: white;">{{movieModel.MovieGenre}}</p>
+                <p style="color: white">{{movieModel.MovieLanguage}}</p>
+            </div>
+            <div class="col-sm-2">
+                <button *ngIf="getAuthentication()" class="btn btn-success" [disabled]="!userModel.IsPrime && movieModel.MoviePrimeStatus" (click)="movieWatched()">Watch</button>
+                <br><br>
+                <button *ngIf="getAuthentication()" class="btn btn-primary" (click)="movieWatchLater()">Watch Later</button>
+                <br><br>
+                <button *ngIf="getAuthentication()" class="btn btn-info" (click)="movieFavourite()">Add to Favourites</button>
+                <br><br>
+                <button *ngIf="getAuthentication()" class="btn btn-danger" (click)="onAddReview(1)">Add reviews
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-review *ngIf="reviewIndex == 1"></app-review>

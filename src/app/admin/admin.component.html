@@ -1,0 +1,41 @@
+
+<br><br><br><br>
+
+<table class="table table-sm table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Language</th>
+        <th scope="col">Genre</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <tr *ngFor="let movie of movieModel">
+
+        <td>{{movie.MovieName}}</td>
+
+        <td>{{movie.MovieTitle}}</td>
+
+        <td>{{movie.MovieDescription}}</td>
+
+        <td>{{movie.MovieRating}}</td>
+
+        <td>{{movie.MovieLanguage}}</td>
+
+        <td>{{movie.MovieGenre}}</td>
+
+          <td>
+            <button class="btn btn-danger" (click)="deleteMovie(movie.MovieId)">
+              <i class="bi bi-trash3"></i>
+            </button>
+          </td>
+         
+
+      </tr>
+    </tbody>
+  </table>

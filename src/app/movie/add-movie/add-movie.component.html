@@ -1,0 +1,154 @@
+<br><br><br>
+<div class="container">
+    <div class="row py-5 mt-4 align-items-center">
+        <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+            <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt=""
+                class="img-fluid mb-3 d-none d-md-block">
+            <h1 style="color: white;">Add show</h1>
+        </div>
+
+        <!--  Form -->
+        <div class="col-md-7 col-lg-6 ml-auto">
+            <form #addmovie="ngForm" (ngSubmit)="addmovie.form.valid && onFormSubmit(addmovie.value)">
+                <div class="row">
+                    <!--  Name -->
+                    <div class="col-lg-12 mb-4" style="font-size: 0.875em; color: red;"
+                        *ngIf="!MovieName.valid && MovieName.touched">
+                        <div *ngIf="MovieName.errors?.['required']">Name is required</div>
+                    </div>
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="MovieName" type="text" placeholder="Name" required ngModel name="MovieName"
+                            #MovieName="ngModel" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+                    <!-- Title-->   
+                    <div class="col-lg-12 mb-4" style="font-size: 0.875em; color: red;"
+                        *ngIf="!MovieTitle.valid && MovieTitle.touched">
+                        <div *ngIf="MovieTitle.errors?.['required']">Title is required</div>
+                    </div>
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="MovieTitle" type="text" placeholder="Movie Title"
+                            class="form-control bg-white border-left-0 border-md" required ngModel name="MovieTitle"
+                            #MovieTitle="ngModel" >
+                    </div>
+                    
+                    <!-- Description-->   
+                    <div class="col-lg-12 mb-4" style="font-size: 0.875em; color: red;"
+                        *ngIf="!MovieDescription.valid && MovieDescription.touched">
+                        <div *ngIf="MovieDescription.errors?.['required']">Description is required</div>
+                    </div>
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="MovieDescription" type="text" placeholder="Movie Description"
+                            class="form-control bg-white border-left-0 border-md" required ngModel name="MovieDescription"
+                            #MovieDescription="ngModel" >
+                    </div>
+
+                    <!-- IMdB Rating-->   
+                    <div class="col-lg-12 mb-4" style="font-size: 0.875em; color: red;"
+                        *ngIf="!MovieRating.valid && MovieRating.touched">
+                        <div *ngIf="MovieRating.errors?.['required']">Rating is required</div>
+                    </div>
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="MovieRating" type="text" placeholder="Rating"
+                            class="form-control bg-white border-left-0 border-md" required ngModel name="MovieRating"
+                            #MovieRating="ngModel">
+                    </div>
+                   
+                    <!-- Language-->   
+                    <div class="col-lg-12 mb-4" style="font-size: 0.875em; color: red;"
+                        *ngIf="!MovieLanguage.valid && MovieLanguage.touched">
+                        <div *ngIf="MovieLanguage.errors?.['required']">Language is required</div>
+                    </div>
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-black-tie text-muted"></i>
+                            </span>
+                        </div>
+                        <select id="MovieLanguage" 
+                            class="form-control custom-select bg-white border-left-0 border-md" ngModel
+                            name="MovieLanguage" #MovieLanguage="ngModel" required>
+                            <option value="">Choose movie language</option>
+                            <option>English</option>
+                            <option>Hindi</option> 
+                            <option>Punjabi</option>
+                            <option>Spanish</option>
+                        </select>
+                    </div>
+
+                    <!--Genre-->
+                    <div class="col-lg-12 mb-4" style="font-size: 0.875em; color: red;"
+                        *ngIf="!MovieGenre.valid && MovieGenre.touched">
+                        <div *ngIf="MovieGenre.errors?.['required']">Genre is required</div>
+                    </div>
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-black-tie text-muted"></i>
+                            </span>
+                        </div>
+                        <select id="MovieGenre" 
+                            class="form-control custom-select bg-white border-left-0 border-md" ngModel
+                            name="MovieGenre" #MovieGenre="ngModel" required>
+                            <option value="">Choose movie genre</option>
+                            <option>Adventure</option>
+                            <option>Horror</option> 
+                            <option>Fictional</option>
+                            <option>Comedy</option>
+                        </select>
+                    </div>
+
+                     <!--Prime-->
+                     <div class="col-lg-12 mb-4" style="font-size: 0.875em; color: red;"
+                     *ngIf="!MoviePrimeStatus.valid && MoviePrimeStatus.touched">
+                     <div *ngIf="MoviePrimeStatus.errors?.['required']">Status is required</div>
+                 </div>
+                 <div class="input-group col-lg-12 mb-4">
+                     <div class="input-group-prepend">
+                         <span class="input-group-text bg-white px-4 border-md border-right-0">
+                             <i class="fa fa-black-tie text-muted"></i>
+                         </span>
+                     </div>
+                     <select id="MoviePrimeStatus" 
+                         class="form-control custom-select bg-white border-left-0 border-md" ngModel
+                         name="MoviePrimeStatus" #MoviePrimeStatus="ngModel" required>
+                         <option value="">Choose Movie Prime Status</option>
+                         <option>true</option>
+                         <option>false</option>
+                     </select>
+                 </div>
+                   
+             </div>
+                    <!-- Submit Button -->
+                    <div class="form-group col-lg-12 mx-auto mb-0">
+                        <button type="submit" [disabled]="!addmovie.form.valid" class="btn btn-danger btn-block py-2">
+                            ADD 
+                        </button>
+                    </div>
+<br><br>
+                    
+
+            </form>
+        </div>
+    </div>
+</div>

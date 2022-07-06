@@ -1,0 +1,31 @@
+<br><br>
+<div class="container">
+    <form #reviewForm="ngForm" (ngSubmit)="reviewForm.form.valid && onFormSubmit(reviewForm.value)">
+        <div class="row">
+                    <div class="col-10">
+                        <input id="Message" type="text" required  ngModel name="Message"
+                            #Message="ngModel" 
+                            placeholder="Enter review" class="form-control bg-white border-left-0 border-md">
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="col-2">
+                        <button type="submit" [disabled]="!reviewForm.form.valid" class="btn btn-primary btn-block py-2">
+                            POST
+                        </button>
+                    </div>
+        </div> 
+</form>
+</div>
+<br><br>
+<div class="container">
+    <div class="row" *ngFor="let review of reviewModel">
+        <div class="row" style="color: rgb(0, 255, 225);">
+           <h5>{{review.UserName}}</h5>
+        </div>
+        <div class="row" style="color: white;">
+            <i class="bi bi-chat-left-dots">&nbsp;&nbsp;{{review.Message}}</i>
+        </div>
+        <br><hr>
+    </div>
+</div>
+

@@ -1,0 +1,163 @@
+<br><br><br>
+<!--ADVENTURE-->
+<div class="container">
+    <br><h3 style="color: rgba(255, 0, 0, 0.639);">Adventure</h3>
+    <hr style="color: gray;">
+    <table class="table table-sm table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Language</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <tr *ngFor="let movie of advModel">
+    
+            <td>{{movie.MovieName}}</td>
+    
+            <td>{{movie.MovieTitle}}</td>
+    
+            <td>{{movie.MovieDescription}}</td>
+    
+            <td>{{movie.MovieRating}}</td>
+    
+            <td>{{movie.MovieLanguage}}</td>
+        
+              <td>
+                <button class="btn btn-primary" (click)="showDetails(movie.MovieId)">
+                    <i class="bi bi-arrow-up-right-circle-fill"></i>
+                </button>
+              </td>
+             
+    
+          </tr>
+        </tbody>
+      </table>
+</div>
+<!--COMEDY-->
+<div class="container">
+    <br><h3 style="color: rgba(255, 0, 0, 0.639);">Comedy</h3>
+    <hr style="color: gray;">
+    <table class="table table-sm table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Language</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <tr *ngFor="let movie of comedyModel">
+    
+            <td>{{movie.MovieName}}</td>
+    
+            <td>{{movie.MovieTitle}}</td>
+    
+            <td>{{movie.MovieDescription}}</td>
+    
+            <td>{{movie.MovieRating}}</td>
+    
+            <td>{{movie.MovieLanguage}}</td>
+        
+              <td>
+                <button class="btn btn-primary" (click)="showDetails(movie.MovieId)">
+                    <i class="bi bi-arrow-up-right-circle-fill"></i>
+                </button>
+              </td>
+             
+    
+          </tr>
+        </tbody>
+      </table>
+</div>
+<!--FICTIONAL-->
+<div class="container">
+    <br><h3 style="color: rgba(255, 0, 0, 0.639);">Fictional</h3>
+    <hr style="color: gray;">
+    <table class="table table-sm table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Language</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <tr *ngFor="let movie of fictionalModel">
+    
+            <td>{{movie.MovieName}}</td>
+    
+            <td>{{movie.MovieTitle}}</td>
+    
+            <td>{{movie.MovieDescription}}</td>
+    
+            <td>{{movie.MovieRating}}</td>
+    
+            <td>{{movie.MovieLanguage}}</td>
+        
+              <td>
+                <button class="btn btn-primary" (click)="showDetails(movie.MovieId)">
+                    <i class="bi bi-arrow-up-right-circle-fill"></i>
+                </button>
+              </td>
+             
+    
+          </tr>
+        </tbody>
+      </table>
+</div>
+<!--HORROR-->
+<div class="container">
+    <br><h3 style="color: rgba(255, 0, 0, 0.639);">Horror</h3>
+    <hr style="color: gray;">
+    <table class="table table-sm table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Language</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <tr *ngFor="let movie of horrorModel">
+    
+            <td>{{movie.MovieName}}</td>
+    
+            <td>{{movie.MovieTitle}}</td>
+    
+            <td>{{movie.MovieDescription}}</td>
+    
+            <td>{{movie.MovieRating}}</td>
+    
+            <td>{{movie.MovieLanguage}}</td>
+        
+              <td>
+                <button class="btn btn-primary" (click)="showDetails(movie.MovieId)">
+                    <i class="bi bi-arrow-up-right-circle-fill"></i>
+                </button>
+              </td>
+             
+    
+          </tr>
+        </tbody>
+      </table>
+</div>
+<br><br>
+

@@ -1,0 +1,52 @@
+<div class="toolbar" role="banner">
+  <!--main title and logo-->
+  <a *ngIf="AuthService.gettoken()!='1'" aria-label="movieing" title="movieing" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
+    <img width="40"  alt="Movie logo"  src="../assets/logo.jpg"/>
+  </a>
+  <span>MOVIEing - One stop for all binge watchers</span>
+  <div class="spacer"></div>
+  <nav class="navbar navbar-light justify-content-between">
+    <!--search-->
+    <form class="form-inline" #search="ngForm"
+    (ngSubmit)="onFormSubmit(search.value)">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ngModel required
+        name="search" #search="ngModel">
+      <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+
+<!--after login, options user will have-->
+  <div class="dropdown">
+    <a *ngIf="AuthService.gettoken()" class="dropbtn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-collection-fill" viewBox="0 0 16 16" style="color: white;">
+        <path d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"/>
+      </svg>
+    </a>
+    <div class="dropdown-content">
+    <a *ngIf="AuthService.gettoken()!='1'" (click)="getWatch()">Watched</a>
+    <a  *ngIf="AuthService.gettoken()!='1'" (click)="getWatchLater()">Watch Later</a>
+    <a  *ngIf="AuthService.gettoken()!='1'" (click)="getFavourite()">Favourites</a>
+    <a  *ngIf="AuthService.gettoken()!='1'"  (click)="getPrime()">Opt for prime</a>  
+    <a  *ngIf="AuthService.gettoken()=='1'" routerLink="/admin/addMovie">Add show</a>
+    </div>
+  </div>
+<!--login,register,logout options-->
+  <div class="dropdown">
+    <a class="dropbtn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30 " height="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16" style="color: white;">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+      </svg></a>
+    <div class="dropdown-content">
+    <a *ngIf="!AuthService.gettoken()" routerLink="/login">Login</a>
+    <a *ngIf="!AuthService.gettoken()" routerLink="/register">Register</a>
+    <a *ngIf="AuthService.gettoken()" (click)="logout()">Logout</a>
+    </div>
+  </div>
+
+ &nbsp;&nbsp;&nbsp;
+
+</div>
+<br><br> 
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,83 @@
+<br><br><br>
+<style src="register.component.css"></style>
+<div class="container">
+    <div class="row py-5 mt-4 align-items-center">
+        <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+            <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt=""
+                class="img-fluid mb-3 d-none d-md-block">
+            <h1 style="color: white;">Create an Account</h1>
+        </div>
+
+        <!-- Registeration Form -->
+        <div class="col-md-7 col-lg-6 ml-auto">
+            <form #registerForm="ngForm" (ngSubmit)="registerForm.form.valid && onFormSubmit(registerForm.value)">
+                <div class="row">
+                    <!--  Name -->
+                    <div class="col-lg-12 mb-4" style="font-size: 0.875em; color: red;"
+                        *ngIf="!UserName.valid && UserName.touched">
+                        <div *ngIf="UserName.errors?.['required']">Name is required</div>
+                    </div>
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="UserName" type="text" placeholder="Name" required ngModel name="UserName"
+                            #UserName="ngModel" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+                    <!-- Email Address -->
+                   
+                    <div class="col-lg-12 mb-4" style="font-size: 0.875em; color: red;"
+                        *ngIf="!UserEmailId.valid && UserEmailId.touched">
+                        <div *ngIf="UserEmailId.errors?.['required']">Email is required</div>
+                        <div *ngIf="UserEmailId.errors?.['pattern']">Valid email is required</div>
+                    </div>
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="UserEmailId" type="email" placeholder="Email Address"
+                            class="form-control bg-white border-left-0 border-md" required ngModel name="UserEmailId"
+                            #UserEmailId="ngModel" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$">
+                    </div>
+ 
+
+                    <!-- Password -->
+                
+                    <div class="col-lg-12 mb-4 px-4 border-md border-right-0" style="font-size: 0.875em; color: red;"
+                        *ngIf="!UserPassword.valid && UserPassword.touched">
+                        <div *ngIf="UserPassword.errors?.['required']">Password is required.</div>
+                        <div *ngIf="UserPassword.errors?.['minlength']">Password should have length of atleast 8.</div>
+                            special character.</div>
+                    </div>
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="UserPassword" type="password" required minlength="8" ngModel name="UserPassword"
+                            #UserPassword="ngModel" 
+                            placeholder="Password" class="form-control bg-white border-left-0 border-md">
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="form-group col-lg-12 mx-auto mb-0">
+                        <button type="submit"  class="btn btn-danger btn-block py-2">
+                            SIGNUP
+                        </button>
+                    </div>
+<br><br>
+                    <!-- Already Registered -->
+                    <div class="text-center w-100">
+                        <p class="text-muted font-weight-bold">Registered User ? <a href="/login"
+                                class="text-primary ml-2">Login</a></p>
+                    </div>
+
+            </form>
+        </div>
+    </div>
+</div>
